@@ -1,0 +1,237 @@
+.sidebar {
+  width: 100%;
+  max-width: 702px;
+  padding: 72px 64px;
+  background-color: $black;
+  background-image: url("../img/ellipse-menu.png");
+  background-size: 435px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: fixed;
+  z-index: 3;
+  height: calc(100% - 127px);
+  left: -702px;
+  top:0;
+  transition: left 0.3s ease;
+  overflow: auto;
+  margin-top: 127px;
+  @include xxl-block {
+    margin-top: 112.41px;
+    height: calc(100% - 112.41px);
+  }
+  @include xl-block {
+    margin-top: 128px;
+    height: calc(100% - 128px);
+  }
+  @include lg-block {
+    margin-top: 79.25px;
+    height: calc(100% - 79.25px);
+  }
+  @include md-block {
+    padding: 53px 32px;
+    max-width: 500px;
+    left: -500px;
+  }
+  @include sm-block {
+    margin-top: 62.94px;
+    height: calc(100% - 62.94px);
+  }
+
+  &.show{
+    left: 0px;
+  }
+
+  .menu-btn {
+    position: absolute;
+    top: 47px;
+    right: 47px;
+    @include md-block {
+      width: 20px;
+      height: 20px;
+      top: 21px;
+      right: 16px;
+    }
+
+    span {
+      background-color: $white;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 18px;
+    @include md-block {
+      font-size: 20px;
+    }
+  }
+
+  &--right {
+    left: inherit;
+    right: -702px;
+    transition: right 0.3s ease;
+    @include md-block {
+      max-width: 500px;
+      right: -500px;
+    }
+
+    &.show{
+      left: inherit;
+      right: 0;
+    }
+  }
+
+  scrollbar-color: $grey $white;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $grey;
+  }
+
+  &::-webkit-scrollbar-track { 
+    background: $white;
+  }
+}
+
+.sidebar-list {
+  &__item {
+    margin-bottom: 32px;
+    @include md-block {
+      margin-bottom: 16px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-size: 24px;
+    font-weight: 700;
+    color: $white;
+    transition: all 0.3s;
+    text-decoration: underline;
+    text-decoration-color: #fff0;
+    @include md-block {
+      font-size: 14px;
+    }
+
+    &:hover {
+      text-decoration-color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+.sidebar-contacts {
+  margin-top: 72px;
+  @include md-block {
+    margin-top: 48px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    color: $white;
+    margin-bottom: 24px;
+    margin-left: -15px;
+    @include md-block {
+      margin-bottom: 8px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    @include md-block {
+      font-size: 16px;
+    }
+  }
+
+  &__info {
+    font-size: 20px;
+    font-weight: 500;
+    @include md-block {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  &__mail {
+    font-size: 24px;
+    font-weight: 400;
+    //transition: all 0.3s;
+    //text-decoration: underline;
+    //text-decoration-color: #fff;
+    @include md-block {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    //&:hover {
+    //  text-decoration: underline;
+    //  text-decoration-color: #fff0;
+    //}
+  }
+
+  &__icon {
+    margin-right: 24px;
+    flex-shrink: 0;
+    @include md-block {
+      width: 46px;
+      margin-right: 12px;
+    }
+  }
+}
+
+.sidebar-menu {
+  .sidebar-list {
+    margin-bottom: 48px;
+    @include md-block {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    margin-top: 103px;
+    margin-bottom: 29.5px;
+    @include md-block {
+      margin: 48px 0 25px;
+    }
+  }
+}
+
+body.sidebar-opened {
+  overflow:hidden;
+}
+
+.hidden-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #ffffff;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s all;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+    opacity: 0.3;
+    pointer-events: all;
+    transition: 0.3s all;
+  }
+}

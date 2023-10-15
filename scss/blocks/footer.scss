@@ -1,0 +1,123 @@
+.footer {
+  padding: 143px 0 46px;
+  @include md-block {
+    padding: 35px 0 55px;
+  }
+  
+  &__logo {
+    margin-bottom: 52px;
+    @include md-block {
+      margin-bottom: 25px;
+    }
+    @include sm-block {
+      max-width: 84px;
+    }
+  }
+  
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    @include xl-block {
+      display: block;
+      margin-left: 20px;
+    }
+    @include lg-block {
+      margin-left: 0;
+    }
+    @include md-block {
+      margin-bottom: 30px;
+    }
+    
+    &__item {
+      display: flex;
+      align-items: center;
+      height: fit-content;
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+        @include xl-block {
+          margin-bottom: 16px;
+        }
+      }
+      @include md-block {
+        align-items: center;
+      }
+
+      &-hint {
+        align-items: start;
+        @include md-block {
+          &:last-child {
+            align-items: start;
+          }
+        }
+
+        .footer-info__icon {
+          margin-top: 4px;
+        }
+      }
+    }
+    
+    &__icon {
+      width: 52px;
+      height: 43px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include md-block {
+        width: 46px;
+        height: 40px;
+        margin-right: 9px;
+      }
+    }
+    
+    &__title {
+      display: none;
+      @include md-block {
+        font-size: 16px;
+        font-weight: 700;
+        display: block;
+      }
+    }
+    
+    &__text {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 500;
+      color: $black;
+      @include md-block {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      
+      &.bordered {
+        @include sm-block {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  &__line {
+    margin: 37px 0 16px;
+    height: 1px;
+    width: 100%;
+    background-color: $grey;
+  }
+  
+  &__copyright {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  &__map {
+    position: relative;
+    
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}

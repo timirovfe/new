@@ -1,0 +1,74 @@
+.dropdown {
+  float: right;
+  position: relative;
+  display: inline-block;
+  
+  &__btn {
+    background-color: #fff0;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0 20px 0 0;
+    @include sm-block {
+      font-size: 16px;
+    }
+    
+    &:hover, &:focus {
+      background-color: #fff0;
+    }
+    
+    &::after {
+      content: url("../img/arrow-down.svg");
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      right: -5px;
+      top: 0;
+      transition: all 0.15s ease-in-out;
+      @include sm-block {
+        right: -4px;
+        top: -2px;
+      }
+    }
+    
+    .open:after {
+      transform: rotate(-135deg)
+    }
+  }
+  
+  &__content {
+    display: none;
+    position: absolute;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #FFF;
+    min-width: 216px;
+    overflow: auto;
+    right: 0;
+    z-index: 1;
+    padding: 8px 0;
+  }
+  
+  &__item {
+    color: #000;
+    padding: 4px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+
+  &.show .dropdown__content {
+    display: block;
+  }
+}

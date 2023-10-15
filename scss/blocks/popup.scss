@@ -1,0 +1,394 @@
+.popup {
+  border-radius: 4px;
+  border: 0.8px solid $grey;
+  
+  .fancybox-close-small {
+    right: 30px;
+    top: 32px;
+    padding: 0;
+    width: 37px;
+    height: 37px;
+    @include sm-block {
+      width: 32px;
+      height: 32px;
+      top: 16px;
+      right: 16px;
+    }
+
+    svg {
+      fill: #000;
+      opacity: 1;
+      stroke-width: 1;
+      stroke: #000;
+    }
+  }
+}
+
+.popup-sended {  
+  &__icon img {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 38px;
+  }
+  
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 27.216px;
+    margin-bottom: 20px;
+    color: $black;
+    text-align: center;
+    @include md-block {
+      font-size: 24px;
+      line-height: 1;
+    }
+    @include sm-block {
+      font-size: 16.41px;
+    }
+  }
+  
+  &__line {
+    display: block;
+    background: #DADADA;
+    height: 1px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    @include sm-block {
+      max-width: 388.91px;
+    }
+  }
+  
+  &__text {
+    font-weight: 400;
+    text-align: center;
+    max-width: 423px;
+    margin: 0 auto;
+    @include md-block {
+      font-size: 16px;
+    }
+    
+    &.min {
+      margin-top: 132px;
+      @include md-block {
+        margin-top: 13px;
+      }
+    }
+  }
+  
+  &__social {
+    display: flex;
+    justify-content: center;
+
+    a {
+      margin-right: 27px;
+      @include sm-block {
+        margin-right: 25px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.review-success {
+  border-radius: 4px;
+  border: 0.8px solid var(--black-and-grey-d, #C1C1C1);
+  @include sm-block {
+    padding-left: 19px;
+    padding-right: 19px;
+    border-radius: 20px 20px 0px 0px;
+    border: none;
+  }
+}
+
+.review-popup {
+  padding: 32px 32px 64px;
+  max-width: 724px;
+  width: 100%;
+  @include md-block {
+    padding: 24px 16px 40px;
+  }
+
+  &__title.sidebar__title {
+    color: #000000;
+    margin-bottom: 73px;
+    font-size: 32px;
+    @include sm-block {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__form {
+    &-label.form__label {
+      color: #000000;
+    }
+
+    &-wrap.form__wrap {
+      margin-bottom: 36px;
+      @include md-block {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-btn.form__btn {
+      max-width: 100%;
+      padding: 9.5px 63px;
+    }
+  }
+}
+
+.fancybox-fx-slide-in-out.fancybox-slide--previous {
+  transform: translateX(100%);
+}
+
+.fancybox-fx-slide-in-out.fancybox-slide--next {
+  transform: translateX(100%);
+}
+
+.fancybox-fx-slide-in-out.fancybox-slide--current {
+  transform: translateX(0);
+}
+
+.fancybox-fx-slide-in-up.fancybox-slide--previous {
+  transform: translateY(100%);
+}
+
+.fancybox-fx-slide-in-up.fancybox-slide--next {
+  transform: translateY(100%);
+}
+
+.fancybox-fx-slide-in-up.fancybox-slide--current {
+  transform: translateY(0);
+}
+
+.popup-callback {
+  padding: 9px 0 40px;
+  background-color: #121026;
+  background-image: url("../img/ellipse-callback.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  border: none;
+  max-width: 702px;
+  width: 100%;
+  @include sm-block {
+    padding: 3px 0 24px;
+  }
+  
+  &__wrap {
+    margin-top: -90px;
+    padding: 0 64px;
+    @include sm-block {
+      padding: 0 24px;
+      margin-top: 12px;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 47.96px;
+    margin-bottom: 8px;
+    text-align: center;
+    @include md-block {
+      margin-bottom: 8px;
+    }
+    @include sm-block {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 27px;
+    }
+  }
+  
+  &__subtitle {
+    color: $white;
+    font-size: 24px;
+    margin-bottom: 60px;
+    text-align: center;
+    @include sm-block {
+      font-size: 14px;
+      margin-bottom: 24px;
+      margin-top: -8px;
+    }
+  }
+
+  &--thanks {
+    background-color: $white;
+    background-image: inherit;
+    padding: 54px 42px 33px;
+    max-width: 547px;
+
+    .popup-sended__text:last-child {
+      margin-top: 175px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 91px;
+    @include md-block {
+      margin-bottom: 72px;
+    }
+    @include sm-block {
+      margin-bottom: 50px;
+    }
+
+    &-btn.form__btn {
+      max-width: 100%;
+      padding: 13.5px 19px;
+      @include md-block {
+        padding: 6.5px 29px;
+      }
+      @include sm-block {
+        margin-top: 0;
+      }
+    }
+  }
+  
+  &__form-input {
+    color: $white !important;
+  }
+  
+  .form__politic {
+    color: $dark-grey;
+
+    a {
+      color: $dark-grey;
+      border-color: $dark-grey;;
+    }
+  }
+
+  .form__wrap {
+    margin-bottom: 24px;
+  }
+  
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sm-block {
+      justify-content: start;
+    }
+    
+    .phone {
+      width: 28px;
+    }
+    
+    a {
+      margin-right: 27px;
+      @include sm-block {
+        margin-right: 25px;
+      }
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .fancybox-close-small {
+    width: 61px;
+    height: 61px;
+    right: 16px;
+    top: 16px;
+    @include sm-block {
+      width: 32.759px;
+      height: 32.759px;
+    }
+    svg {
+      fill: $white;
+      stroke: $white;
+      width: 61px;
+      height: 61px;
+      @include sm-block {
+        width: 32.759px;
+        height: 32.759px;
+      }
+    }
+  }
+}
+
+.form-success {
+  padding: 97px 0 40px;
+  background-color: #121026;
+  background-image: url("../img/ellipse-callback.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  border: none;
+  max-width: 702px;
+  width: 100%;
+  color: $white;
+  @include sm-block {
+    padding: 58px 0 24px;
+  }
+  
+  .popup-sended__icon img {
+    @include sm-block {
+      margin-bottom: 32px;
+      max-width: 58px;
+    }
+  }
+  
+  .popup-sended__title {
+    color: $white;
+    font-size: 40px;
+    margin-bottom: 28px;
+    @include sm-block {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .popup-sended__line {
+    margin-bottom: 34px;
+    max-width: 473px;
+    @include sm-block {
+      max-width: 265px;
+      margin-bottom: 24px;
+    }
+  }
+  
+  .popup-sended__text {
+    color: $white;
+    font-size: 24px;
+    @include sm-block {
+      font-size: 14px;
+      color: $grey;
+    }
+  }
+  
+  .popup-sended__social {
+    margin-top: 262px;
+    @include sm-block {
+      margin-top: 211px;
+    }
+    
+    .phone {
+      width: 28px;
+    }
+  }
+
+  .fancybox-close-small {
+    width: 61px;
+    height: 61px;
+    right: 16px;
+    top: 16px;
+    @include sm-block {
+      width: 32.759px;
+      height: 32.759px;
+    }
+    svg {
+      fill: $white;
+      stroke: $white;
+      width: 61px;
+      height: 61px;
+      @include sm-block {
+        width: 32.759px;
+        height: 32.759px;
+      }
+    }
+  }
+}
